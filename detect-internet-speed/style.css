@@ -1,0 +1,39 @@
+:root {
+  --biru-muda: #14a1ff;
+  --borders: 3px solid black;
+  --bayangan: -5px 8px 0px 1px black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background: var(--biru-muda);
+}
+.container {
+  width: 350px;
+  background-color: #ffffff;
+  padding: 4em 2em;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 0.5em;
+  border: var(--borders);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2em;
+  line-height: 2.2em;
+  box-shadow: var(--bayangan);
+}
+p {
+  font-size: 400;
+  color: #747497;
+  letter-spacing: 0.02em;
+}
+span {
+  font-weight: 500;
+  color: #090931;
+}
