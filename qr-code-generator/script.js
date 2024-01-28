@@ -12,23 +12,19 @@ let sizeChoice, BGColorChoice, FGColorChoice;
 sizeOptions.addEventListener("change", () => {
   sizeChoice = sizeOptions.value;
 });
-
 //Set background color
 BGColor.addEventListener("input", () => {
   BGColorChoice = BGColor.value;
 });
-
 //Set foreground color
 FGColor.addEventListener("input", () => {
   FGColorChoice = FGColor.value;
 });
-
 //Format input
 const inputFormatter = (value) => {
   value = value.replace(/[^a-z0-9A-Z]+/g, "");
   return value;
 };
-
 submitBtn.addEventListener("click", async () => {
   container.innerHTML = "";
   //QR code genertion

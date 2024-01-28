@@ -1,0 +1,32 @@
+<div class="card rounded-lg bg-gray-800">
+    <div class="card-content">
+        <p class="text-white text-base">untuk sahabat</p>
+    </div>
+</div>
+
+<!--  -->
+body {
+min-height: 100vh;
+margin: 0;
+/* Menghapus margin default dari body */
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #f0f0f0;
+/* Warna latar belakang body, bisa disesuaikan */
+}
+
+.card {
+height: 90vh;
+width: 100%;
+margin: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+/* background-color: blue; */
+}
+
+.card-content {
+text-align: center;
+}

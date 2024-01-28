@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep - Sahabat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            /* Warna latar belakang body, bisa disesuaikan */
+        }
+
+        .card {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            border: 5px solid white !important;
+        }
+
+        .card-content {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper" id="questions-container">
+            <!-- Slides -->
+            <!-- kontent-->
+        </div>
+
+    </div>
+    <!-- =================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            // direction: 'vertical',
+            // loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+
+        // ======================
+        // Daftar pertanyaan
+        const questions = [
+            "Slide Ke Kanan Untuk Mulai",
+            "Apa yang membuatmu bahagia saat ini?",
+            "Apa impian terbesarmu dalam hidup?",
+            "Apakah ada sesuatu yang membuatmu khawatir atau cemas?",
+            "Jika kamu bisa mengubah satu hal dalam hidupmu, apa yang akan kamu ubah?",
+            "Apa momen paling berarti dalam hidupmu?",
+            "Bagaimana kamu mendefinisikan arti kebahagiaan?",
+            "Apakah ada hal yang kamu sesali?",
+            "Bagaimana cara kamu mengatasi stres atau tekanan?",
+            "Apa nilai-nilai yang paling penting bagimu?",
+            "Jika kamu memiliki waktu luang, apa yang ingin kamu lakukan?",
+            "Apa kegembiraan kecil yang membuatmu tersenyum?",
+            "Apa hal yang paling kamu hargai dari persahabatan kita?",
+            "Apakah ada buku, film, atau musik yang sangat mempengaruhi pandangan hidupmu?",
+            "Bagaimana kamu mengukur kesuksesan dalam hidupmu?",
+            "Apa tantangan terbesar yang pernah kamu hadapi dan bagaimana cara kamu mengatasinya?",
+            "Apa hal yang paling ingin kamu pelajari atau tingkatkan pada dirimu sendiri?",
+            "Apa pendapatmu tentang cinta dan hubungan?",
+            "Jika kamu memiliki kesempatan untuk bertemu dengan versi dirimu di masa lalu, apa yang ingin kamu katakan padanya?",
+            "Apa tujuan besar yang ingin kamu capai dalam lima tahun ke depan?",
+            "Bagaimana kamu mendefinisikan keberhasilan pribadi?"
+        ];
+
+        // Ambil kontainer pertanyaan
+        const questionsContainer = document.getElementById("questions-container");
+
+        // Loop melalui array pertanyaan dan buat elemen HTML
+        questions.forEach((question) => {
+            const questionSlide = document.createElement("div");
+            questionSlide.className = "swiper-slide";
+
+            const questionCard = document.createElement("div");
+            questionCard.className = "card h-screen rounded-lg bg-gray-800 border-black";
+
+            const questionContent = document.createElement("div");
+            questionContent.className = "card-content ";
+
+            const questionText = document.createElement("p");
+            questionText.className = "text-white text-center text-base p-6 flex items-center justify-center";
+            questionText.textContent = question;
+
+            questionContent.appendChild(questionText);
+            questionCard.appendChild(questionContent);
+            questionSlide.appendChild(questionCard);
+
+            questionsContainer.appendChild(questionSlide);
+        });
+    </script>
+</body>
+
+</html>

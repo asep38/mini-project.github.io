@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep - Sahabat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            /* Warna latar belakang body, bisa disesuaikan */
+        }
+
+        .card {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            border: 5px solid white !important;
+        }
+
+        .card-content {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper" id="questions-container">
+            <!-- Slides -->
+            <!-- kontent-->
+        </div>
+
+    </div>
+    <!-- =================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            // direction: 'vertical',
+            // loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+
+        // ======================
+        // Daftar pertanyaan
+        const questions = [
+            "Slide Ke Kanan Untuk Mulai",
+            "Apa momen paling berkesan kita bersama sebagai pasangan?",
+            "Bagaimana kita bisa lebih mendukung satu sama lain dalam mencapai impian masing-masing?",
+            "Apa nilai-nilai yang kita anggap penting dalam hubungan ini?",
+            "Bagaimana kita bisa menjaga keintiman dan kebersamaan dalam kehidupan sehari-hari?",
+            "Apa tantangan terbesar yang pernah kita hadapi bersama, dan bagaimana kita mengatasinya?",
+            "Bagaimana kita bisa saling memberikan dukungan saat salah satu dari kita mengalami stres atau tekanan?",
+            "Apa arti komunikasi yang baik dalam hubungan kita, dan bagaimana kita bisa meningkatkannya?",
+            "Bagaimana pandangan kita terhadap masa depan bersama, dan apa tujuan kita sebagai pasangan?",
+            "Apa harapan atau impian pribadi masing-masing yang ingin kita wujudkan bersama?",
+            "Bagaimana kita bisa menciptakan momen kecil yang bermakna dalam kehidupan sehari-hari kita?",
+            "Apa yang kita pelajari satu sama lain sejak pertama kali kita bertemu?",
+            "Bagaimana kita bisa merayakan keberagaman dan perbedaan kita dalam hubungan ini?",
+            "Apa yang kita lakukan untuk memperkuat kepercayaan dan keamanan satu sama lain?",
+            "Bagaimana kita bisa bersama-sama mengatasi konflik atau perbedaan pendapat dengan cara yang sehat?",
+            "Apa yang kita anggap sebagai fondasi yang penting dalam hubungan romantis kita?",
+            "Bagaimana kita bisa menjaga keseimbangan antara kebutuhan individu dan kebutuhan sebagai pasangan?",
+            "Apa hal kecil yang bisa kita lakukan untuk membuat hubungan kita tetap romantis dan penuh kasih sayang?",
+            "Bagaimana kita bisa bersama-sama tumbuh dan berkembang sebagai individu dan sebagai pasangan?",
+            "Apa peran humor dan keceriaan dalam memperkuat ikatan cinta kita?",
+            "Apa yang ingin kita capai bersama dalam tahun-tahun mendatang?"
+        ];
+
+        // Ambil kontainer pertanyaan
+        const questionsContainer = document.getElementById("questions-container");
+
+        // Loop melalui array pertanyaan dan buat elemen HTML
+        questions.forEach((question) => {
+            const questionSlide = document.createElement("div");
+            questionSlide.className = "swiper-slide";
+
+            const questionCard = document.createElement("div");
+            questionCard.className = "card h-screen rounded-lg bg-gray-800 border-black";
+
+            const questionContent = document.createElement("div");
+            questionContent.className = "card-content ";
+
+            const questionText = document.createElement("p");
+            questionText.className = "text-white text-center text-base p-6 flex items-center justify-center";
+            questionText.textContent = question;
+
+            questionContent.appendChild(questionText);
+            questionCard.appendChild(questionContent);
+            questionSlide.appendChild(questionCard);
+
+            questionsContainer.appendChild(questionSlide);
+        });
+    </script>
+</body>
+
+</html>

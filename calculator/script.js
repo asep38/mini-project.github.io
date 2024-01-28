@@ -10,7 +10,6 @@ let erase = document.getElementById("erase");
 window.onload = () => {
   input.value = "";
 };
-
 //Access each class using forEach
 button_input.forEach((button_class) => {
   button_class.addEventListener("click", () => {
@@ -22,7 +21,6 @@ button_input.forEach((button_class) => {
     input.value += button_class.value;
   });
 });
-
 //Solve the user's input when clicked on equal sign
 equal.addEventListener("click", () => {
   equal_pressed = 1;

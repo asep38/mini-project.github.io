@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep - Sahabat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            /* Warna latar belakang body, bisa disesuaikan */
+        }
+
+        .card {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            border: 5px solid white !important;
+        }
+
+        .card-content {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Slider main container -->
+    <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper" id="questions-container">
+            <!-- Slides -->
+            <!-- kontent-->
+        </div>
+
+    </div>
+    <!-- =================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            // direction: 'vertical',
+            // loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+
+        // ======================
+        // Daftar pertanyaan
+        const questions = [
+            "Slide Ke Kanan Untuk Mulai",
+            "Apa momen yang paling berkesan dalam perjalanan hidupmu sebagai orang tua?",
+            "Bagaimana kamu mengatasi tantangan terbesar dalam mendidik anak-anak?",
+            "Apa nilai-nilai penting yang ingin kamu tanamkan pada generasi muda?",
+            "Apa yang kamu yakini sebagai kunci keberhasilan dalam mendukung pertumbuhan anak-anakmu?",
+            "Bagaimana pengalaman menjadi orang tua mempengaruhi pandangan hidupmu secara keseluruhan?",
+            "Apa yang kamu anggap sebagai prioritas utama dalam mendidik anak-anakmu?",
+            "Bagaimana kamu mendefinisikan peranmu sebagai orang tua?",
+            "Apa momen kecil yang paling berharga dalam hubunganmu dengan anak-anakmu?",
+            "Apakah ada hal-hal tertentu yang ingin kamu sampaikan atau ajarkan kepada anak-anakmu?",
+            "Bagaimana kamu menangani situasi sulit atau konflik dalam keluarga?",
+            "Apa yang kamu yakini sebagai fondasi yang kuat untuk hubungan keluarga yang sehat?",
+            "Bagaimana kamu menjaga keseimbangan antara memberikan kebebasan kepada anak-anak dan memberikan pedoman?",
+            "Apakah ada pelajaran hidup tertentu yang ingin kamu sampaikan kepada anak-anakmu?",
+            "Apa harapanmu untuk masa depan anak-anakmu?",
+            "Bagaimana kamu mengajarkan nilai-nilai seperti empati dan penghargaan pada anak-anakmu?",
+            "Apa peran humor dan keceriaan dalam membina hubungan dengan anak-anak?",
+            "Bagaimana kamu mendukung perkembangan minat dan bakat unik dari setiap anak?",
+            "Apa nasihat atau pengalaman hidup yang ingin kamu bagikan kepada anak-anakmu?",
+            "Bagaimana kamu merayakan pencapaian dan keberhasilan anak-anakmu?",
+            "Apa yang kamu anggap sebagai warisan terpenting yang ingin kamu tinggalkan bagi generasi selanjutnya?"
+        ];
+
+        // Ambil kontainer pertanyaan
+        const questionsContainer = document.getElementById("questions-container");
+
+        // Loop melalui array pertanyaan dan buat elemen HTML
+        questions.forEach((question) => {
+            const questionSlide = document.createElement("div");
+            questionSlide.className = "swiper-slide";
+
+            const questionCard = document.createElement("div");
+            questionCard.className = "card h-screen rounded-lg bg-gray-800 border-black";
+
+            const questionContent = document.createElement("div");
+            questionContent.className = "card-content ";
+
+            const questionText = document.createElement("p");
+            questionText.className = "text-white text-center text-base p-6 flex items-center justify-center";
+            questionText.textContent = question;
+
+            questionContent.appendChild(questionText);
+            questionCard.appendChild(questionContent);
+            questionSlide.appendChild(questionCard);
+
+            questionsContainer.appendChild(questionSlide);
+        });
+    </script>
+</body>
+
+</html>
